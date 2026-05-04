@@ -1,0 +1,23 @@
+{
+  "hero": {
+    "imagem": "https://via.placeholder.com/500x600",
+    "titulo": "Arte em forma de doce",
+    "subtitulo": "Confeitaria autoral para momentos únicos"
+  },
+  "gallery": [
+    {
+      "title": "Bolo Personalizado",
+      "image": "https://via.placeholder.com/600x800",
+      "category": "bolos"
+    },
+    {
+      "title": "Doce Temático",
+      "image": "https://via.placeholder.com/600x800",
+      "category": "doces"
+    }
+  ],
+  "agenda": [
+    "2026-05-10",
+    "2026-05-15"
+  ]
+}

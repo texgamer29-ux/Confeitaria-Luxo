@@ -60,7 +60,51 @@
     from { transform: translateX(0); }
     to   { transform: translateX(-50%); }
   }
-  .marquee-track { animation: marquee 40s linear infinite; }
+  .hero-marquee {
+    position: relative;
+    overflow: hidden;
+    padding: 2.2rem 0;
+    background: linear-gradient(180deg, rgba(246, 241, 238, 0.95), rgba(255, 255, 255, 0.98));
+  }
+  .hero-marquee-panel {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    overflow: hidden;
+  }
+  .marquee-track {
+    display: flex;
+    align-items: center;
+    gap: 2.5rem;
+    animation: marquee 36s linear infinite;
+    will-change: transform;
+  }
+  .hero-marquee:hover .marquee-track {
+    animation-play-state: paused;
+  }
+  .marquee-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.9rem;
+    color: #5A4636;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(1rem, 1.7vw, 1.35rem);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+    white-space: nowrap;
+  }
+  .marquee-text {
+    font-style: normal;
+  }
+  .marquee-highlight {
+    color: var(--rose-main);
+    font-style: italic;
+    font-weight: 500;
+  }
+  .marquee-divider {
+    color: var(--rose-main);
+    font-size: 1.1rem;
+  }
 
   /* ——— Soft float ——— */
   @keyframes softFloat {
@@ -248,7 +292,7 @@
      </div>
      <div class="lg:col-span-5 relative reveal reveal-delay-2">
       <div class="relative aspect-[4/5] rounded-[40px] overflow-hidden card-surface float-soft">
-       <div class="absolute inset-0 bg-gradient-to-tr from-[#E9D6CF] to-[#F2A7A7] opacity-40"></div><img src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Bolo Artístico" class="w-full h-full object-cover">
+       <div class="absolute inset-0 bg-gradient-to-tr from-[#E9D6CF] to-[#F2A7A7] opacity-40"></div><img data-edit="hero-cake" src="https://images.unsplash.com/photo-1535141192574-5d4897c12636?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Bolo Artístico" class="w-full h-full object-cover">
        <div class="absolute inset-0 ring-1 ring-inset ring-black/5 rounded-[40px]"></div>
       </div>
       <div class="absolute -bottom-6 -left-6 w-32 h-32 rounded-3xl card-surface p-4 flex flex-col justify-center items-center text-center shadow-2xl rotate-[-6deg]">
@@ -264,6 +308,20 @@
       </div>
      </div>
     </div>
+   </section><!-- ========== HERO ========== -->
+   <section class="hero-marquee">
+    <div class="hero-marquee-panel">
+     <div class="marquee-track" aria-hidden="true">
+      <span class="marquee-item"><span class="marquee-text">Feito à mão</span><span class="marquee-divider">✿</span></span>
+      <span class="marquee-item"><span class="marquee-text marquee-highlight">Curadoria</span><span class="marquee-divider">✿</span></span>
+      <span class="marquee-item"><span class="marquee-text">Edição limitada</span><span class="marquee-divider">✿</span></span>
+      <span class="marquee-item"><span class="marquee-text marquee-highlight">Arte comestível</span><span class="marquee-divider">✿</span></span>
+      <span class="marquee-item"><span class="marquee-text">Feito à mão</span><span class="marquee-divider">✿</span></span>
+      <span class="marquee-item"><span class="marquee-text marquee-highlight">Curadoria</span><span class="marquee-divider">✿</span></span>
+      <span class="marquee-item"><span class="marquee-text">Edição limitada</span><span class="marquee-divider">✿</span></span>
+      <span class="marquee-item"><span class="marquee-text marquee-highlight">Arte comestível</span><span class="marquee-divider">✿</span></span>
+     </div>
+    </div>
    </section><!-- ========== STORYTELLING SCROLL ========== -->
    <section id="story" class="relative min-h-[180vh]">
     <div class="stage-sticky flex items-center justify-center overflow-hidden">
@@ -271,7 +329,7 @@
       <div class="relative h-[400px] md:h-[600px]">
        <div id="layer-1" class="layer opacity-100 scale-100">
         <div class="w-full h-full rounded-[32px] overflow-hidden card-surface relative">
-         <img src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="opacity-60">
+         <img data-edit="story-layer-1" src="https://images.unsplash.com/photo-1484154218962-a197022b5858?q=80&amp;w=800&amp;auto=format&amp;fit=crop" class="opacity-60">
          <div class="absolute inset-0 flex items-center justify-center p-12">
           <p class="font-display italic text-2xl opacity-60">
            O rascunho da ideia...
@@ -281,12 +339,12 @@
        </div>
        <div id="layer-2" class="layer opacity-0 scale-95">
         <div class="w-full h-full rounded-[32px] overflow-hidden card-surface relative">
-         <img src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+         <img data-edit="story-layer-2" src="https://images.unsplash.com/photo-1550617931-e17a7b70dce2?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
         </div>
        </div>
        <div id="layer-3" class="layer opacity-0 scale-90">
         <div class="w-full h-full rounded-[32px] overflow-hidden card-surface relative">
-         <img src="https://images.unsplash.com/photo-1562280963-8a5475740a10?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
+         <img data-edit="story-layer-3" src="https://images.unsplash.com/photo-1562280963-8a5475740a10?q=80&amp;w=800&amp;auto=format&amp;fit=crop">
         </div>
        </div>
       </div>
@@ -321,7 +379,7 @@
      <div class="col-span-12 lg:col-span-7 reveal reveal-delay-2">
       <div class="grid grid-cols-12 gap-4">
        <div class="col-span-6 card-surface rounded-[24px] aspect-[3/4] overflow-hidden relative tilt-card">
-        <img src="https://images.unsplash.com/photo-1535231544450-b41240a18000?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Floral">
+        <img data-edit="about-floral" src="https://images.unsplash.com/photo-1535231544450-b41240a18000?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Floral">
         <div class="absolute inset-0 bg-black/10"></div>
         <div class="absolute inset-0 flex items-center justify-center">
          <div class="font-display italic text-white text-2xl">
@@ -331,7 +389,7 @@
        </div>
        <div class="col-span-6 space-y-4">
         <div class="card-surface rounded-[24px] aspect-square overflow-hidden relative tilt-card">
-         <img src="https://images.unsplash.com/photo-1519340333755-5672c2193d39?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Bolos">
+         <img data-edit="about-bolos" src="https://images.unsplash.com/photo-1519340333755-5672c2193d39?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Bolos">
          <div class="absolute bottom-4 left-4 right-4">
           <div class="font-display text-white text-lg">
            Bolos escultóricos
@@ -339,7 +397,7 @@
          </div>
         </div>
         <div class="card-surface rounded-[24px] aspect-square overflow-hidden relative tilt-card">
-         <img src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Doces">
+         <img data-edit="about-doces" src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&amp;w=800&amp;auto=format&amp;fit=crop" alt="Doces">
          <div class="absolute bottom-4 left-4 right-4">
           <div class="font-display text-lg" style="color: var(--text);">
            Doces finos
@@ -359,7 +417,7 @@
         <div class="w-10 h-px" style="background: var(--rose-main);"></div><span id="gallery-eyebrow" class="text-[11px] tracking-[0.35em] uppercase" style="color: var(--rose-main);">Vitrine</span>
        </div>
        <h2 id="gallery-title" class="font-display font-light leading-[1] tracking-tight" style="color: var(--text); font-size: clamp(2.5rem, 6vw, 5rem);">Coleção <span class="font-italic" style="color: var(--rose-main);">viva</span>.</h2>
-      </div><button id="add-piece-btn" class="admin-only-inline btn-primary items-center gap-3 px-7 py-4 rounded-full text-sm tracking-[0.15em] uppercase"> <i data-lucide="plus" class="w-4 h-4"></i> Adicionar peça </button>
+      </div><button id="add-piece-btn" class="admin-only-inline btn-primary items-center gap-3 px-7 py-4 rounded-full text-sm tracking-[0.15em] uppercase"> <i data-lucide="plus" class="w-4 h-4"></i> Adicionar peça </button> <button id="edit-images-btn" class="admin-only-inline btn-ghost items-center gap-3 px-7 py-4 rounded-full text-sm tracking-[0.15em] uppercase"> <i data-lucide="image" class="w-4 h-4"></i> Editar Imagens </button>
      </div>
      <div id="filter-bar" class="flex flex-wrap gap-3 mb-12 reveal reveal-delay-2">
       <button data-filter="all" class="chip active">Todas</button> <button data-filter="bolos" class="chip">Bolos</button> <button data-filter="doces" class="chip">Doces finos</button> <button data-filter="casamentos" class="chip">Casamentos</button>
@@ -521,6 +579,16 @@
     </div>
    </div>
   </div>
+  <div id="image-editor-modal" class="modal-backdrop">
+   <div class="modal-panel w-full max-w-lg card-surface rounded-[32px] p-8 md:p-10 shadow-2xl">
+    <div class="flex items-center justify-between mb-8">
+     <h3 class="font-display text-2xl" style="color: var(--text);">Editar Imagens</h3><button onclick="closeImageEditor()" class="w-10 h-10 rounded-full flex items-center justify-center hover:bg-black/5"> <i data-lucide="x" class="w-5 h-5"></i> </button>
+    </div>
+    <div id="image-editor-list" class="space-y-4 max-h-96 overflow-y-auto">
+     <!-- Gerado por JS -->
+    </div>
+   </div>
+  </div>
   <div id="toast" class="toast"></div>
   <script>
     // ========== SCROLL POSITION FIX ==========
@@ -655,6 +723,78 @@
         renderGallery();
       });
       document.getElementById('add-piece-btn').addEventListener('click', openModal);
+      document.getElementById('edit-images-btn').addEventListener('click', openImageEditor);
+
+      // ========== IMAGE EDITOR SYSTEM ==========
+      window.editImageMap = JSON.parse(localStorage.getItem('atelier_images') || '{}');
+
+      function loadEditedImages() {
+        Object.entries(window.editImageMap).forEach(([key, url]) => {
+          const img = document.querySelector(`img[data-edit="${key}"]`);
+          if (img) img.src = url;
+        });
+      }
+
+      function saveImageEdits() {
+        localStorage.setItem('atelier_images', JSON.stringify(window.editImageMap));
+      }
+
+      function renderImageEditor() {
+        const list = document.getElementById('image-editor-list');
+        const images = document.querySelectorAll('img[data-edit]');
+        list.innerHTML = '';
+        images.forEach(img => {
+          const key = img.dataset.edit;
+          const currentSrc = img.src;
+          const div = document.createElement('div');
+          div.className = 'p-4 rounded-xl bg-black/5';
+          div.innerHTML = `
+            <div class="flex items-center justify-between mb-3">
+              <label class="text-[12px] font-bold uppercase opacity-60">${key}</label>
+              <button type="button" onclick="editImageUrl('${key}')" class="text-[11px] px-3 py-1.5 rounded-lg bg-blue-500 text-white font-bold">Editar</button>
+            </div>
+            <input type="text" value="${currentSrc}" class="field text-[11px]" id="img-${key}" readonly>
+          `;
+          list.appendChild(div);
+        });
+      }
+
+      window.editImageUrl = function(key) {
+        const newUrl = prompt('Nova URL da imagem:', window.editImageMap[key] || document.querySelector(`img[data-edit="${key}"]`).src);
+        if (newUrl && newUrl.trim()) {
+          window.editImageMap[key] = newUrl;
+          const img = document.querySelector(`img[data-edit="${key}"]`);
+          if (img) img.src = newUrl;
+          saveImageEdits();
+          renderImageEditor();
+          showToast('✅ Imagem atualizada!');
+        }
+      };
+
+      function openImageEditor() {
+        renderImageEditor();
+        document.getElementById('image-editor-modal').classList.add('open');
+      }
+
+      function closeImageEditor() {
+        document.getElementById('image-editor-modal').classList.remove('open');
+      }
+
+      // Permitir clicar em imagens para editar (admin)
+      if (isAdmin) {
+        document.addEventListener('click', (e) => {
+          const img = e.target.closest('img[data-edit]');
+          if (img) {
+            e.preventDefault();
+            const key = img.dataset.edit;
+            window.editImageUrl(key);
+          }
+        });
+        document.querySelector('body').style.cursor = 'pointer';
+      }
+
+      // Carregar imagens salvas ao iniciar
+      loadEditedImages();
     }
     
     if (document.readyState === 'loading') {
